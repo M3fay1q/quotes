@@ -32,8 +32,10 @@ class _QuotesState extends State<Quotes> {
             .map((quote) => QuoteCard(
                 quote: quote,
                 delete: () {
-                  setState(() {
-                    quotes.remove(quote);
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    setState(() {
+                      quotes.remove(quote);
+                    });
                   });
                 }))
             .toList(),

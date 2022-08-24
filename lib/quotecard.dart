@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class QuoteCard extends StatelessWidget {
   final Quote quote;
-  final Function delete;
+  final VoidCallback delete;
   const QuoteCard({required this.quote, required this.delete});
 
   @override
@@ -42,7 +42,7 @@ class QuoteCard extends StatelessWidget {
               height: 6.0,
             ),
             FlatButton.icon(
-              onPressed: delete(),
+              onPressed: delete,
               label: Text('Delete Quote'),
               icon: Icon(Icons.delete),
             ),
